@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/marcofino"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="bottom" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="5"
+                android:text="Escribe tu mensaje:"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:layout_weight="5"
+                android:src="@drawable/tresraya" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_mensaje"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="3"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="9"
+            android:onClick="retorno"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="enviar"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+   <link   href="estilos.css" rel="stylesheet" type="text/css">
+   <script src="funciones.js"></script>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+   <!-- Pág. Inicio -->
+   
+   <div data-role="page" data-theme="b" id="inicio">
+      <div data-role="header">
+         <h1>3 en Raya</h1>
+         <div id="conectado" class="estadoConexion">
+            <h3>Conectado</h3>
+         </div>
+         <div id="desconectado" class="estadoConexion">
+            <h3>Desconectado</h3>
+         </div>
+      </div>
+      <div id= "menu" data-role="content">
+         <div id = "menustyle">
+            <table align="center">
+               <tr>
+                  <td>
+                     <img src="tresraya.png" class="fotoportada">
+                  </td>
+               </tr>
+            </table>
+            <a href="#partida" data-role="button" data-theme="a" data-transition="pop" onClick="iniciarJuego();">Jugar</a>
+            <a href="#jugarOnline" data-role="button" data-theme="a" data-transition="pop" onClick="jugarOnline();">Jugar OnLine</a>
+            <a href="#ayuda" data-role="button" data-theme="a" data-transition="pop">Ayuda</a>
+            <a href="#salir" data-role="button" data-theme="a" data-transition="pop" onClick="salirJuego();">Salir</a><br><br><br>
+            
+         </div>
+      </div>
+
+      <div id="curso">
+         <img src="http://www.androidcurso.com/images/certificado_upv.jpg" class="androidCurso"><br>
+         <a href="http://www.androidcurso.com">Android Curso</a>
+      </div>
+   </div>
+   <div id = "pie">
+      <a href="#" onClick="enviarMensaje();">Enviar Mensaje</a>
+   </div>
+   <!-- /Pág. Inicio -->
+ 
+   <!-- Pág. Partida -->
+   <div data-role="page" data-theme="b" id="partida">
+      <div id = "cabecera" data-role="header">
+         <h1 id="turno">Turno Jugador 1</h1>
+         <div id="conectado2" class="estadoConexion">
+            <h3>Conectado</h3>
+         </div>
+         <div id="desconectado2" class="estadoConexion">
+            <h3>Desconectado</h3>
+         </div>
+      </div>
+      <div data-role="content">
+         <div id="tabla" align="center" style="padding:10px">
+            <table class="tabla" id="tabla">
+               <tbody>
+               <tr>
+                  <td name="0_0" id="0_0" value="  " 
+                                                      onClick="click_celda('0_0');"></td>
+                  <td name="0_1" id="0_1" value="  " 
+                                                      onClick="click_celda('0_1');"></td>
+                  <td name="0_2" id="0_2" value="  " 
+                                                      onClick="click_celda('0_2');"></td>
+               </tr>
+               <tr>
+                  <td name="1_0" id="1_0" value="  " 
+                                                      onClick="click_celda('1_0');"></td>
+                  <td name="1_1" id="1_1" value="  " 
+                                                      onClick="click_celda('1_1');"></td>
+                  <td name="1_2" id="1_2" value="  " 
+                                                      onClick="click_celda('1_2');"></td>
+               </tr>
+               <tr>
+                  <td name="2_0" id="2_0" value="  " 
+                                                      onClick="click_celda('2_0');"></td>
+                  <td name="2_1" id="2_1" value="  " 
+                                                      onClick="click_celda('2_1');"></td>
+                  <td name="2_2" id="2_2" value="  " 
+                                                      onClick="click_celda('2_2');"></td>
+               </tr>
+               </tbody>
+            </table><br><br><br>
+
+         </div>
+
+      </div>
+
+ 	 <div id="botones">
+
+         <a href="#inicio" class = "inicio" data-role="button" data-theme="a" data-transition="pop" 
+            data-icon="home">Inicio</a>
+         <a href="#" class = "envio" onClick="enviarMensaje();">Enviar Mensaje</a>
+         <a href="#" class ="reinicio" data-role="button" data-transition="pop" 
+            onClick="iniciarJuego();" data-theme="a" data-icon="refresh">Reiniciar</a>
+      </div>
+      </div>
+   </div>
+   <!-- /Pág. Partida -->
+ 
+   <!-- Pág. Ayuda -->
+   <div data-role="page" data-theme="b" id="ayuda">
+      <div id = "cabecera" data-role="header">
+         <h1>Ayuda</h1>
+          <div id="conectado" class="estadoConexion">
+            <h3>Conectado</h3>
+         </div>
+         <div id="desconectado" class="estadoConexion">
+            <h3>Desconectado</h3>
+         </div>
+      </div>
+      <div data-role="content">
+         <h3>Reglas:</h3>
+         <p>Trata de colocar 3 fichas en línea. Vale ponerlas en horizontal, vertical o diagonal. Si se rellenan todas las casilla sin que ningún jugador haya conseguido poner 3 fichas en línea, entonces se produce un empate.</p>
+         <h3>¿Cómo jugar?</h3>
+         <p>Empieza el jugador 1, que juega con X, luego le toca tirar al jugador 2, que juega con O. Cuando se termina la partida puedes volver a jugar sin ir a la pantalla inicial pulsando el botón reiniciar.</p>
+      </div>
+      <div id="botones" data-role="footer">
+         <a href="#inicio" data-role="button" data-transition="pop" data-icon="home">Inicio</a>
+      </div>
+   </div>
+   <!-- /Pág. Ayuda -->
+</body>
+</html>

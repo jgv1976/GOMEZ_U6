@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/marcofino"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esta aplicacion ha sido creada por Javier Gomez para el Curso de Android Avanzado"
+            android:textColor="#000"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Febrero 2014"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

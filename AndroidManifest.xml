@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.example.GOMEZJ_U6"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+    
+    <permission android:name="org.example.GOMEZJ_U6.permission.C2D_MESSAGE"
+                                android:protectionLevel="signature" />
+	<uses-permission android:name="org.example.GOMEZJ_U6.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:backupAgent="MisPreferenciasBackupAgent"
+        android:icon="@drawable/tresraya"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <meta-data
+		   android:name="com.google.android.gms.version"
+		   android:value="@integer/google_play_services_version"/>
+        
+		<meta-data 
+		   android:name="com.google.android.backup.api_key" 
+		   android:value="AEdPqrEAAAAI3RolLOO8KIBRW2W5dv8qNxmizd2kibD0vZySfw" /> 
+        
+        <receiver 
+            android:name="org.example.GOMEZJ_U6.GCMBroadcastReceiver" 
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            
+		  <intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		    <category android:name="org.example.GOMEZJ_U6" />
+		  </intent-filter>
+		  
+		</receiver>
+		<service android:name="org.example.GOMEZJ_U6.GCMIntentService" />
+        
+        <activity
+            android:name="org.example.GOMEZJ_U6.ActividadPrincipal"
+            android:label="@string/app_name" 
+            android:configChanges="orientation|keyboardHidden"
+		    android:screenOrientation="portrait"
+		    android:windowSoftInputMode="stateHidden"> 
+		    
+           
+        </activity>
+        
+        <activity android:name="org.example.GOMEZJ_U6.EnviarMensaje"
+        		  android:theme="@android:style/Theme.Dialog"
+            	  android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name="org.example.GOMEZJ_U6.Creditos"
+        		  android:theme="@android:style/Theme.Dialog"
+            	  android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name="org.example.GOMEZJ_U6.Bienvenida">
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
